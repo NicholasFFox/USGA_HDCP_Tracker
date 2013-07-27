@@ -1,9 +1,11 @@
 HdcpTracker::Application.routes.draw do
+
+  devise_for :users
+
   resources :courses
-
-
   resources :rounds
 
+  root to: 'rounds#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

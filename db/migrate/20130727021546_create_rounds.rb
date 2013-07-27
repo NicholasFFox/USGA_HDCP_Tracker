@@ -4,7 +4,6 @@ class CreateRounds < ActiveRecord::Migration
       t.integer :user_id
       t.integer :course_id
       t.integer :score
-      t.float :round_hdcp
 
       t.timestamps
     end

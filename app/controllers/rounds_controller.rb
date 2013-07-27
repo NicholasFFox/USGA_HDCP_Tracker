@@ -64,6 +64,8 @@ class RoundsController < ApplicationController
 
     respond_to do |format|
       if @round.update_attributes(params[:round])
+        @round.fill_hdcp
+        @round.update_attributes(params[:round])
         format.html { redirect_to @round, notice: 'Round was successfully updated.' }
         format.json { head :no_content }
       else

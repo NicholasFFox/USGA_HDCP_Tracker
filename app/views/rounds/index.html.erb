@@ -5,31 +5,33 @@
 
 <%= link_to "Record a Round", new_round_path, class: "btn btn-success" %>
 
-<% @rounds.each do |round| %>
- 
-  <div class="round">
-    <div class="row">
-      <div class="span1">
-        image
-      </div>
-      <div class="span7">
-        <strong><%=round.user.profile_name %></strong> shot <%= round.score %> at <%= round.course.print_tee %>
-        <p>Round HDCP: <%= round.hdcp %></p>
-        <p>User HDCP: <%= round.user.hdcp %></p>
-        <div class="meta">
-          <%= link_to time_ago_in_words(round.created_at) + " ago", round %>
-          <span class="admin">
-            | <%= link_to "Edit", edit_round_path(round) %> |
-            <%= link_to "Delete", round, method: :delete, data: {confirm: "
-              Are you sure you want to delete this round"} %>
-          </span>
+<div class="rounds_container">
+  <% @rounds.each do |round| %>
+   
+    <div class="round">
+      <div class="row">
+        <div class="span1">
+          <!--Image Placeholder-->
+        </div>
+        <div class="span7">
+          <strong><%=round.user.profile_name %></strong> shot <%= round.score %> at <%= round.course.print_tee %>
+          <p>Round HDCP Differential: <%= round.hdcp %></p>
+          <div class="meta">
+            <%= link_to time_ago_in_words(round.created_at) + " ago", round %>
+            <span class="admin">
+              | <%= link_to "Edit", edit_round_path(round) %> |
+              <%= link_to "Delete", round, method: :delete, data: {confirm: "
+                Are you sure you want to delete this round"} %>
+            </span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 
-<% end %>
+  <% end %>
+</div>
+
 <br/>
 <br />
 

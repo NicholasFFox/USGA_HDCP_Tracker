@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :profile_name
   
-
+  def num_played
+    if self.rounds.all.length < 5 
+      "N/A"
+    else 
+      "Enough Rounds to Calulate a Handicap"
+    end
+  end
 
 end

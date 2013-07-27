@@ -27,7 +27,20 @@
     </div>
   </div>
 
+
 <% end %>
+<br/>
+<br />
+
+<div class="counter">
+  <% if Round.all.length === 0 %>
+    <p><%= Round.all.length %> Rounds Recorded... Be the First!</p>
+  <% elsif Round.all.length === 1 %>
+    <p><%= Round.all.length %> Round Recorded!</p>
+  <% else %>
+    <p><%= Round.all.length %> Rounds Recorded!</p>
+  <% end %>
+</div>
 
 <br />
 

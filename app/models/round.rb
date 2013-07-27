@@ -5,4 +5,16 @@ class Round < ActiveRecord::Base
   
   attr_accessible :course_id, :score, :user_id
 
+
+  def self.minimum_score?
+    score >=18
+  end
+
+  def round_hdcp
+    diff = score - course.rating
+    temp = diff * 113
+    hdcp = temp/course.slope
+    hdcp.round(1)
+  end
+
 end

@@ -1,4 +1,4 @@
-<%= form_for(@round) do |f| %>
+<%= simple_form_for(@round, html: {class: "form-horizontal"}) do |f| %>
   <% if @round.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@round.errors.count, "error") %> prohibited this round from being saved:</h2>
@@ -11,19 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+  <%= f.input :user_id, collection: User.all, label_method: :profile_name %>
+  <%= f.input :course_id, collection: Course.all, label_method: :print_tee %>
+  <%= f.input :score %>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
-  <div class="field">
-    <%= f.label :course_id %><br />
-    <%= f.number_field :course_id %>
-  </div>
-  <div class="field">
-    <%= f.label :score %><br />
-    <%= f.number_field :score %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

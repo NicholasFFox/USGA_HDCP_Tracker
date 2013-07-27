@@ -10,11 +10,11 @@ class Round < ActiveRecord::Base
     score >=18
   end
 
-  def hdcp
+  def fill_hdcp
     diff = score - course.rating
     temp = diff * 113
     hdcp = temp/course.slope
-    hdcp.round(1)
+    self.hdcp = hdcp.round(1)
   end
 
 end

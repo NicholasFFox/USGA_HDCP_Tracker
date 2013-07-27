@@ -42,8 +42,12 @@ class RoundsController < ApplicationController
   def create
     @round = Round.new(params[:round])
 
+    #NFFOX ADDIITON
+    @round.fill_hdcp
+
     respond_to do |format|
       if @round.save
+        
         format.html { redirect_to @round, notice: 'Round was successfully created.' }
         format.json { render json: @round, status: :created, location: @round }
       else

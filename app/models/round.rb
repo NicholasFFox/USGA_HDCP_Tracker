@@ -5,10 +5,11 @@ class Round < ActiveRecord::Base
   
   attr_accessible :course_id, :score, :user_id
 
+  validates :user_id, presence: true
+  validates :course_id, presence: true
+  validates :score, presence: true,
+                    numericality: {greater_than: 17}
 
-  def self.minimum_score?
-    score >=18
-  end
 
   def fill_hdcp
     diff = score - course.rating

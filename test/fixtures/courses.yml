@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  tee: MyString
-  rating: 1.5
-  slope: 1.5
+patuxent:
+  name: "Patuxent"
+  tee: "White"
+  rating: 70.6
+  slope: 128.0
 
-two:
-  name: MyString
-  tee: MyString
-  rating: 1.5
-  slope: 1.5
+eisenhower:
+  name: "Eisenhower"
+  tee: "White"
+  rating: 69.3
+  slope: 118.0

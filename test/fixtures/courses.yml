@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  tee: MyString
+  rating: 1.5
+  slope: 1.5
+
+two:
+  name: MyString
+  tee: MyString
+  rating: 1.5
+  slope: 1.5

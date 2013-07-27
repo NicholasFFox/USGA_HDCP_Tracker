@@ -1,4 +1,7 @@
 HdcpTracker::Application.routes.draw do
+  resources :courses
+
+
   resources :rounds
 
 

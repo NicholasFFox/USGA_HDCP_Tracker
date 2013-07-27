@@ -14,8 +14,8 @@
       </div>
       <div class="span7">
         <strong><%=round.user.profile_name %></strong> shot <%= round.score %> at <%= round.course.print_tee %>
-        <p>Round HDCP: <%= round.round_hdcp %></p>
-        <p>User HDCP: <%= round.user.num_played %></p>
+        <p>Round HDCP: <%= round.hdcp %></p>
+        <p>User HDCP: <%= round.user.hdcp %></p>
         <div class="meta">
           <%= link_to time_ago_in_words(round.created_at) + " ago", round %>
           <span class="admin">

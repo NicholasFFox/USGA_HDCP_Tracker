@@ -1,26 +1,29 @@
-<%= simple_form_for(@round, html: {class: "form-horizontal"}) do |f| %>
-  <% if @round.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@round.errors.count, "error") %> prohibited this round from being saved:</h2>
-
-      <ul>
-      <% @round.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<div class="row">
+  <div class="span6 offset3">
+    <%= simple_form_for(@round, html: {class: "form-horizontal well"}) do |f| %>
+      <% if @round.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@round.errors.count, "error") %> prohibited this round from being saved:</h2>
+          <ul>
+          <% @round.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <%= f.input :user_id, collection: User.all, label_method: :profile_name %>
-  <%= f.input :course_id, collection: Course.all, label_method: :print_tee %>
-  <%= f.input :score %>
+      
+      <%= f.input :course_id, collection: Course.all, label_method: :print_tee, label: "Where did you play?", required: false %>
+      <%= f.input :score, label: "What did you shoot?", required: false %>
+
+      <%= f.button :submit %>
 
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <% end %>
+
+
+    <br />
+      <%= link_to "Don't See Your Course? Add It!", new_course_path, class: "btn btn-success" %>
   </div>
-
-  <div>
-    <%= link_to "Don't See Your Course? Add It!", new_course_path, class: "btn btn-success" %>
-  </div>
-<% end %>
+  <!--HEre is where the second column could go -->
+</div>

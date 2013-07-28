@@ -44,15 +44,17 @@ class RoundsController < ApplicationController
   # POST /rounds
   # POST /rounds.json
   def create
+
     @round = Round.new(params[:round])
-    #NFFOX ADDIITON
-    #@round.fill_hdcp
+    #Additions
+    @round.user_id = current_user.id
+
     respond_to do |format|
       if @round.save
         #NFFOX ADDIITON
         @round.fill_hdcp
         @round.update_attributes(params[:round])
-        format.html { redirect_to @round, notice: 'Round was successfully created.' }
+        format.html { redirect_to feed_path, notice: 'Round was successfully created.' }
         format.json { render json: @round, status: :created, location: @round }
       else
         format.html { render action: "new" }
@@ -70,7 +72,7 @@ class RoundsController < ApplicationController
       if @round.update_attributes(params[:round])
         @round.fill_hdcp
         @round.update_attributes(params[:round])
-        format.html { redirect_to @round, notice: 'Round was successfully updated.' }
+        format.html { redirect_to feed_path, notice: 'Round was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

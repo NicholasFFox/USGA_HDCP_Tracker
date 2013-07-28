@@ -1,12 +1,14 @@
 
 <div class="page-header">
-  <h1>All Rounds</h1>
+  <h1>Recently Posted Rounds</h1>
 </div>
 
-<%= link_to "Record a Round", new_round_path, class: "btn btn-success" %>
+<div class="new_round">
+  <h5>Played Recently? <%= link_to "Record a Round", new_round_path, class: "btn btn-success" %></h5>
+</div>
 
 <div class="rounds_container">
-  <% @rounds.each do |round| %>
+  <% @rounds.reverse.each do |round| %>
    
     <div class="round">
       <div class="row">

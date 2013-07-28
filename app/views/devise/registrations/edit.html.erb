@@ -1,4 +1,4 @@
-
+<br />
 <div class="row">
   <div class="span4">
 
@@ -13,9 +13,10 @@
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
-        <%= f.input :password%>
-        <%= f.input :password_confirmation%>
         <%= f.input :current_password%>
+        <%= f.input :password, label: "New Password"%>
+        <%= f.input :password_confirmation, label: "Confirm New Password"%>
+        
 
 
         <div><%= f.button :submit, "Update" %></div>

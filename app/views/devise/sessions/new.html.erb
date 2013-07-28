@@ -1,4 +1,4 @@
-
+<br />
 <div class="row">
   <div class="span4">
   <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "well"}) do |f| %>
@@ -20,7 +20,8 @@
 
   <%= render "devise/shared/links" %>
   </div>
-  <div class="row8">
-    <h2>Signing in is easy and secure</h2>
+  <div class="span8">
+    <h2 align="center">Welcome Back!</h2>
+    <%= image_tag("pebble.jpg", alt: "Pebble Beach") %>
   </div>
 </div>

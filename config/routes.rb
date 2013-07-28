@@ -12,7 +12,7 @@ HdcpTracker::Application.routes.draw do
   resources :courses
   
   resources :rounds
-  get "feed", to: "rounds#index", as: :feed
+  get 'feed', to: 'rounds#index', as: :feed
   root to: 'rounds#index'
 
   get '/:id', to: 'profiles#show'

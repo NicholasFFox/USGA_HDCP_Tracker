@@ -23,7 +23,16 @@ class RoundsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create round" do
+  test "should be logged in to post a status"  do
+    post :create, round: {course_id: 1, score: 72}
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
+
+
+  test "should create round when logged in" do
+    sign_in users(:nick)
     assert_difference('Round.count') do
       post :create, round: { course_id: @round.course_id, score: @round.score, user_id: @round.user_id }
     end
@@ -36,17 +45,26 @@ class RoundsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should get edit when logged in" do
+    sign_in users(:nick)
     get :edit, id: @round
     assert_response :success
   end
 
-  test "should update round" do
+  test "should redirect round update when logged in" do
+    put :update, id: @round, round: { course_id: @round.course_id, score: @round.score, user_id: @round.user_id }
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
+  test "should update round when logged in" do
+    sign_in users(:nick)
     put :update, id: @round, round: { course_id: @round.course_id, score: @round.score, user_id: @round.user_id }
     assert_redirected_to round_path(assigns(:round))
   end
 
-  test "should destroy round" do
+  test "should destroy round when logged in" do
+    sign_in users(:nick)
     assert_difference('Round.count', -1) do
       delete :destroy, id: @round
     end

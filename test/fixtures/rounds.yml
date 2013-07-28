@@ -3,15 +3,11 @@
 one:
   user: nick
   course: patuxent
-  user_id: 1
-  course_id: 1
   score: 72
   hdcp: 1.5
 
 two:
-  user: nick
+  user: bob
   course: patuxent
-  user_id: 1
-  course_id: 1
   score: 72
   hdcp: 1.5

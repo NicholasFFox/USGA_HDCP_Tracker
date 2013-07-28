@@ -9,3 +9,9 @@ nick:
   last_name: "Fox"
   email: "nicholas.f.fox@gmail.com"
   profile_name: "nickfox"
+
+bob:
+  first_name: "bob"
+  last_name: "smith"
+  email: "bobsmith@test.com"
+  profile_name: "bobSmith"

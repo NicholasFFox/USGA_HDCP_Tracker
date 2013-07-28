@@ -1,2 +1,19 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="page-header">
+  <h1><%= @user.profile_name %></h1>
+</div>
+
+<div>
+  <h4>USGA Handicap Index <%= @user.hdcp %></h4>
+  <br />
+</div>
+
+<% if @rounds %>
+  <% @rounds.each do |round| %>
+    <div class="well">
+      <%= round.score %> at <%= round.course.name %>
+      HDCP Differential: <%= round.hdcp %>
+      <hr />
+      <%= link_to time_ago_in_words(round.created_at), round_path(round) %> ago
+    </div>
+  <% end %>
+<% end %>

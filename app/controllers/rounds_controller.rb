@@ -1,4 +1,8 @@
 class RoundsController < ApplicationController
+
+  before_filter :authenticate_user!, only: [:new]
+
+
   # GET /rounds
   # GET /rounds.json
   def index

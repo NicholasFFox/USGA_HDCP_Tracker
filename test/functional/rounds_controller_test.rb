@@ -11,14 +11,21 @@ class RoundsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:rounds)
   end
 
-  test "should get new" do
+  test "should be redirected when not logged in" do
+    get :new
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
+  test "should render the new page when logged in" do
+    sign_in users(:nick)
     get :new
     assert_response :success
   end
 
   test "should create round" do
     assert_difference('Round.count') do
-      post :create, round: { course_id: @round.course_id, round_hdcp: @round.round_hdcp, score: @round.score, user_id: @round.user_id }
+      post :create, round: { course_id: @round.course_id, score: @round.score, user_id: @round.user_id }
     end
 
     assert_redirected_to round_path(assigns(:round))
@@ -35,7 +42,7 @@ class RoundsControllerTest < ActionController::TestCase
   end
 
   test "should update round" do
-    put :update, id: @round, round: { course_id: @round.course_id, round_hdcp: @round.round_hdcp, score: @round.score, user_id: @round.user_id }
+    put :update, id: @round, round: { course_id: @round.course_id, score: @round.score, user_id: @round.user_id }
     assert_redirected_to round_path(assigns(:round))
   end
 

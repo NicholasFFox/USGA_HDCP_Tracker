@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  user: nick
+  course: patuxent
   user_id: 1
   course_id: 1
-  score: 1
+  score: 72
   hdcp: 1.5
 
 two:
+  user: nick
+  course: patuxent
   user_id: 1
   course_id: 1
-  score: 1
+  score: 72
   hdcp: 1.5

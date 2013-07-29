@@ -1,5 +1,3 @@
-
-
 <div class="new_round">
   <h5><%= link_to "Record a Round", new_round_path, class: "btn btn-success" %></h5>
 </div>
@@ -23,11 +21,6 @@
           <p>Played on <%= round.played_on %></p>
           <div class="meta">
             <%= "Posted " + time_ago_in_words(round.created_at) + " ago"%>
-            <span class="admin">
-              | <%= link_to "Edit", edit_round_path(round) %> |
-              <%= link_to "Delete", round, method: :delete, data: {confirm: "
-                Are you sure you want to delete this round"} %>
-            </span>
           </div>
         </div>
       </div>

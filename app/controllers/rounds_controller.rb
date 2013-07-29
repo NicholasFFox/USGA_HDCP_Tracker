@@ -54,7 +54,7 @@ class RoundsController < ApplicationController
         #NFFOX ADDIITON
         @round.fill_hdcp
         @round.update_attributes(params[:round])
-        format.html { redirect_to feed_path, notice: 'Round was successfully created.' }
+        format.html { redirect_to "/#{current_user.profile_name}", notice: 'Round was successfully created.' }
         format.json { render json: @round, status: :created, location: @round }
       else
         format.html { render action: "new" }

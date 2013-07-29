@@ -11,14 +11,22 @@
   <h5><%= link_to "Record a Round", new_round_path, class: "btn btn-success" %></h5>
   <br />
 </div>
+
 <br/>
+
 <div>
   <% if @rounds %>
     <% @rounds.sort_by! {|round| round[:played_on]} %>
     <% @rounds.reverse.each do |round| %>
-      <div class="well">
-        <%= round.played_on %>
-        <p><strong><%= round.score %> at <%= round.course.name %></strong> HDCP Differential: <strong><%= round.hdcp %></strong></p>
+      <div class="round">
+        <%= round.played_on %> : <strong><%= round.score %></strong> at <%= round.course.name %> for a HDCP Differential of <strong><%= round.hdcp %></strong>
+        <div class="meta">
+          <span class="admin">
+            <%= link_to "Edit", edit_round_path(round) %> |
+            <%= link_to "Delete", round, method: :delete, data: {confirm: "
+              Are you sure you want to delete this round"} %>
+          </span>
+        </div>
       </div>
     <% end %>
   <% end %>

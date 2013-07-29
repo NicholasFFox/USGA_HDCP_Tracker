@@ -39,21 +39,33 @@ class User < ActiveRecord::Base
     end
   end
 
+  def get_relevant_rounds
+    if rounds_played > 20
+      date_sorted_rounds = self.rounds.all.sort_by { |round| round[:played_on]}
+      good_rounds = []
+      (0...20).each {|i| good_rounds.append(date_sorted_rounds[i])}
+      good_rounds
+    else
+      self.rounds.all
+    end
+  end
 
   def hdcp
     num_played = rounds_played
     if num_played < 5 
       "N/A"
     else 
+      
       #setup calculation
       all_hdcps=[]
-      self.rounds.all.each {|round| all_hdcps.append(round.hdcp)}
-      sorted_hdcps = all_hdcps.sort
+      
+      sorted_hdcps = get_relevant_rounds.sort_by {|round| round[:hdcp]}
+      
       num_rounds_used = how_many_rounds_in_calculation(num_played)
       sum = 0
 
       #generate total index
-      (0...num_rounds_used).each { |i| sum += sorted_hdcps[i] }
+      (0...num_rounds_used).each { |i| sum += sorted_hdcps[i].hdcp }
       
       #calculate overall index
       avg=sum/num_rounds_used

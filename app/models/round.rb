@@ -3,7 +3,7 @@ class Round < ActiveRecord::Base
   belongs_to :user
   belongs_to :course 
   
-  attr_accessible :course_id, :score, :user_id
+  attr_accessible :course_id, :score, :user_id, :played_on
 
   validates :user_id, presence: true
   validates :course_id, presence: true

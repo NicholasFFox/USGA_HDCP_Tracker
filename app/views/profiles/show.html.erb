@@ -14,12 +14,11 @@
 <br/>
 <div>
   <% if @rounds %>
-    <% @rounds.each do |round| %>
+    <% @rounds.sort_by! {|round| round[:played_on]} %>
+    <% @rounds.reverse.each do |round| %>
       <div class="well">
-        <%= round.score %> at <%= round.course.name %>
-        HDCP Differential: <%= round.hdcp %>
-        <hr />
-        <%= link_to time_ago_in_words(round.created_at), round_path(round) %> ago
+        <%= round.played_on %>
+        <p><strong><%= round.score %> at <%= round.course.name %></strong> HDCP Differential: <strong><%= round.hdcp %></strong></p>
       </div>
     <% end %>
   <% end %>

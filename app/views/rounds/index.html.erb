@@ -10,7 +10,7 @@
 </div>
 
 <div class="rounds_container">
-  <% @rounds.reverse.each do |round| %>
+  <% @rounds.reverse[0...20].each do |round| %>
    
     <div class="round">
       <div class="row">
@@ -19,9 +19,10 @@
         </div>
         <div class="span7">
           <strong><%=round.user.profile_name %></strong> shot <%= round.score %> at <%= round.course.print_tee %>
-          <p>Round HDCP Differential: <%= round.hdcp %></p>
+          <p>Round HDCP Differential: <strong><%= round.hdcp %></strong></p>
+          <p>Played on <%= round.played_on %></p>
           <div class="meta">
-            <%= link_to time_ago_in_words(round.created_at) + " ago", round %>
+            <%= "Posted " + time_ago_in_words(round.created_at) + " ago"%>
             <span class="admin">
               | <%= link_to "Edit", edit_round_path(round) %> |
               <%= link_to "Delete", round, method: :delete, data: {confirm: "

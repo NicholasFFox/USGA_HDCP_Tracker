@@ -12,7 +12,7 @@ class Course < ActiveRecord::Base
                     case_sensitive: false,
                     message: "This Course exists"
                   }
-  validates :state, presence: true
+
   validates :slope, presence: true
   validates :rating, presence: true
 

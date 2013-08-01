@@ -20,7 +20,7 @@
         <legend>New Course</legend>
         <%= f.input :name, label: "Course Name?", required: false%>
         <%= f.input :tee, label: "Tees", required: false %>
-        <%= f.input :state, collection: us_states %>
+        <%= f.input :us_state, collection: us_states, required: false %>
         <%= f.input :rating, label: "Course Rating", required: false %>
         <%= f.input :slope, label: "Slope", required: false %>
         

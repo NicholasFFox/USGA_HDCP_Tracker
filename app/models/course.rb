@@ -2,7 +2,7 @@ class Course < ActiveRecord::Base
 
   has_many :rounds
 
-  attr_accessible :name, :rating, :slope, :tee, :state
+  attr_accessible :name, :rating, :slope, :tee, :us_state
 
   validates :name, presence: true
 

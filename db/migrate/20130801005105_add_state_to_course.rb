@@ -1,5 +1,5 @@
 class AddStateToCourse < ActiveRecord::Migration
   def change
-    add_column :courses, :state, :string
+    add_column :courses, :us_state, :string
   end
 end

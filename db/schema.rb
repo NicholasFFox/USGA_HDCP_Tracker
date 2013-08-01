@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20130801005105) do
     t.float    "slope"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "state"
+    t.string   "us_state"
   end
 
   create_table "rounds", :force => true do |t|

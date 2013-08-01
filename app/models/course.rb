@@ -10,7 +10,7 @@ class Course < ActiveRecord::Base
                   uniqueness: {
                     scope: :name,
                     case_sensitive: false,
-                    message: "This tee exists"
+                    message: "This Course exists"
                   }
   validates :state, presence: true
   validates :slope, presence: true

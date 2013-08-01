@@ -40,6 +40,9 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
+    puts "Temp"
+    puts params
+    
     @course = Course.new(params[:course])
 
     respond_to do |format|
@@ -59,6 +62,7 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
 
     respond_to do |format|
+
       if @course.update_attributes(params[:course])
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
         format.json { head :no_content }

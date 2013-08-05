@@ -1,5 +1,8 @@
 HdcpTracker::Application.routes.draw do
 
+  resources :tees
+
+
   get "profiles/show"
 
   devise_for :users

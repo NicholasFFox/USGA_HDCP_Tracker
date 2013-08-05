@@ -22,7 +22,7 @@
     <% @rounds.sort_by! {|round| round[:played_on]} %>
     <% @rounds.reverse.each do |round| %>
       <div class="round">
-        <%= round.played_on %> : <strong><%= round.score %></strong> at <%= round.course.name %> for a HDCP Differential of <strong><%= round.hdcp %></strong>
+        <%= round.played_on %> : <strong><%= round.score %></strong> at <%= round.tee.course.name %> for a HDCP Differential of <strong><%= round.hdcp %></strong>
         <div class="meta">
           <span class="admin">
             <% if user_signed_in? %>

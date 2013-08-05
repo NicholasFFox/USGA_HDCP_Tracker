@@ -16,7 +16,7 @@
           <!--Image Placeholder-->
         </div>
         <div class="span7">
-          <strong><%= link_to round.user.profile_name, "/#{round.user.profile_name}" %></strong> shot <%= round.score %> at <%= round.course.print_tee %>
+          <strong><%= link_to round.user.profile_name, "/#{round.user.profile_name}" %></strong> shot <%= round.score %> at <%= round.tee.print_tee %>
           <p>Round HDCP Differential: <strong><%= round.hdcp %></strong></p>
           <p>Played on <%= round.played_on %></p>
           <div class="meta">

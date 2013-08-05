@@ -19,10 +19,7 @@
       <fieldset>
         <legend>New Course</legend>
         <%= f.input :name, label: "Course Name?", required: false%>
-        <%= f.input :tee, label: "Tees", required: false %>
         <%= f.input :us_state, collection: us_states, required: false %>
-        <%= f.input :rating, label: "Course Rating", required: false %>
-        <%= f.input :slope, label: "Slope", required: false %>
         
         <div><%= f.button :submit, "Add Course" %></div>
       </fieldset>
@@ -35,7 +32,7 @@
 
   <div class="span8">
     <h2 align="center">Tell us about where you played!</h2>
-    <div><img src="patuxent.JPG" /></div>
+    <div><img src="/patuxent.JPG" /></div>
   </div>
 
 </div>

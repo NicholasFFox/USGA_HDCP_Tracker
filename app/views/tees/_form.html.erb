@@ -1,0 +1,40 @@
+<br />
+<div class="row">
+  <div class="span4">
+
+    <%= simple_form_for(@tee, html: {class: "well"}) do |f| %>
+      <% if @tee.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@tee.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+          <ul>
+          <% @tee.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+
+      <fieldset>
+        <legend>New Tee</legend>
+        <%= f.input :course_id, collection: Course.all, label: "Course Name?", required: false%>
+        <%= f.input :color, label: "Tees", required: false %>
+        <%= f.input :rating, label: "Course Rating", required: false %>
+        <%= f.input :slope, label: "Slope", required: false %>
+        
+        <div><%= f.button :submit, "Add Tee" %></div>
+      </fieldset>
+
+
+
+    <% end %>
+
+  </div>
+
+  <div class="span8">
+    <h2 align="center">Tell us about where you played!</h2>
+    <div><img src="/patuxent.JPG" /></div>
+  </div>
+
+</div>

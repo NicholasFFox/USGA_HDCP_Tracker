@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  color: MyString
+  course_id: 1
+  rating: 1.5
+  slope: 1.5
+
+two:
+  color: MyString
+  course_id: 1
+  rating: 1.5
+  slope: 1.5

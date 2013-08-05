@@ -13,7 +13,7 @@
       <% end %>
 
       
-      <%= f.input :course_id, collection: Course.all, label_method: :print_tee, label: "Where did you play?", required: false %>
+      <%= f.input :tee_id, collection: Tee.all, label_method: :print_tee, label: "Where did you play?", required: false %>
       <%= f.input :score, label: "What did you shoot?", required: false %>
       <%= f.input :played_on, label: "When did you play?", required: false %>
 

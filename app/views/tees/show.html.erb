@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Color:</b>
+  <%= @tee.color %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%= @tee.course_id %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @tee.rating %>
+</p>
+
+<p>
+  <b>Slope:</b>
+  <%= @tee.slope %>
+</p>
+
+
+<%= link_to 'Edit', edit_tee_path(@tee) %> |
+<%= link_to 'Back', tees_path %>

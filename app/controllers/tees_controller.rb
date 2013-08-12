@@ -44,7 +44,7 @@ class TeesController < ApplicationController
 
     respond_to do |format|
       if @tee.save
-        format.html { redirect_to @tee, notice: 'Tee was successfully created.' }
+        format.html { redirect_to new_round_path, notice: 'Tee was successfully added' }
         format.json { render json: @tee, status: :created, location: @tee }
       else
         format.html { render action: "new" }

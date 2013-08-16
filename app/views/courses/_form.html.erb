@@ -19,7 +19,7 @@
       <fieldset>
         <legend>New Course</legend>
         <%= f.input :name, label: "Course Name?", required: false%>
-        <%= f.input :us_state, collection: us_states, required: false %>
+        <%= f.input :us_state, collection: us_states, label: "Where is it?", required: false %>
         
         <div><%= f.button :submit, "Add Course" %></div>
       </fieldset>

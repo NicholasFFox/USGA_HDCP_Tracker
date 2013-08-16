@@ -7,8 +7,8 @@
 
       <fieldset>
         <legend>Edit User</legend>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
+        <%= f.input :first_name, required: false %>
+        <%= f.input :last_name, required: false %>
         <%= f.input :email%>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

@@ -1,7 +1,7 @@
 class RemoveTeeFromCourse < ActiveRecord::Migration
   def change
-    remove_column :rounds, :tee
-    remove_column :rounds, :rating
-    remove_column :rounds, :slope
+    remove_column :courses, :tee
+    remove_column :courses, :rating
+    remove_column :courses, :slope
   end
 end

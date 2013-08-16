@@ -17,18 +17,19 @@
       <%= f.input :score, label: "What did you shoot?", required: false %>
       <%= f.input :played_on, label: "When did you play?", required: false %>
 
-      <%= f.button :submit %>
-
+      <div align="center">
+        <%= f.button :submit %>
+      </div>
 
     <% end %>
 
 
     <br />
-      <div>
+      <div align="center">
         <%= link_to "Don't See Your Course? Add It!", new_course_path, class: "btn btn-success" %>
       </div>
-      <br>
-      <div>
+      <br />
+      <div align="center">
         <%= link_to "The Course is there, but your Tee is missing? Add It!", new_tee_path, class: "btn btn-success" %>
       </div>
   </div>

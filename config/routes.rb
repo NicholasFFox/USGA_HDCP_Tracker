@@ -2,7 +2,6 @@ HdcpTracker::Application.routes.draw do
 
   resources :tees
 
-
   get "profiles/show"
 
   devise_for :users
@@ -11,7 +10,7 @@ HdcpTracker::Application.routes.draw do
     get 'login', to: 'devise/sessions#new', as: :login
     get 'logout', to: 'devise/sessions#destroy', as: :logout
   end
-
+  
   resources :courses
   
   resources :rounds

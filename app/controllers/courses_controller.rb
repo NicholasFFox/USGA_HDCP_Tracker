@@ -1,4 +1,7 @@
 class CoursesController < ApplicationController
+
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   # GET /courses
   # GET /courses.json
   def index
@@ -14,7 +17,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
-
+  
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }
